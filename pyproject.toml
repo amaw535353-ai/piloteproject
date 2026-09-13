@@ -83,7 +83,7 @@ backend = [
     # `crypt` module, which was removed in Python 3.13.
     "libpass==1.9.3",
     "playwright==1.58.0",
-    "psutil==7.1.3",
+    "psutil==7.2.2",
     "psycopg2-binary==2.9.10",
     "puremagic==1.28",
     "pyairtable==3.0.1",
