@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "engagement_id": "ENG-0001",
+  "phase": "Phase 0 - Authorization, Scope, Ethics, Safety, and Responsible Disclosure",
+  "status": "authorized-local-only",
+  "traceability": {
+    "github_issue": "https://github.com/amaw535353-ai/piloteproject/issues/15",
+    "roadmap_file": "AI-Application-Product-Security-Engineer-2026-Roadmap(3).md",
+    "roadmap_sha256": "94835b905991196cff518a1a3bcc767ea66d021b13a425e5638176304e45061c"
+  },
+  "authorization": {
+    "authorized_by": "amaw535353-ai",
+    "authorization_basis": "Repository owner request for work on the owner-controlled fork",
+    "authorized_on": "2026-09-13",
+    "review_before_each_session": true
+  },
+  "owners": {
+    "product": "amaw535353-ai",
+    "engineering": "amaw535353-ai",
+    "security": "amaw535353-ai",
+    "reviewer": "amaw535353-ai",
+    "approver": "amaw535353-ai"
+  },
+  "source_target": {
+    "repository": "amaw535353-ai/piloteproject",
+    "commit": "1d86f5f8f94af7845bffbee61460665838ecc905",
+    "default_branch": "main",
+    "product": "Onyx",
+    "edition": "Community Edition",
+    "deployment": "planned local Docker Compose"
+  },
+  "targets": [
+    {
+      "name": "Onyx frontend and API proxy",
+      "kind": "local_endpoint",
+      "endpoint": "http://localhost:3000",
+      "status": "planned"
+    },
+    {
+      "name": "PostgreSQL",
+      "kind": "local_container",
+      "endpoint": "postgresql://localhost:5432",
+      "status": "planned"
+    },
+    {
+      "name": "mock LLM",
+      "kind": "local_mock",
+      "endpoint": "http://127.0.0.1:8081",
+      "status": "planned"
+    },
+    {
+      "name": "mock MCP server",
+      "kind": "local_mock",
+      "endpoint": "http://127.0.0.1:8082",
+      "status": "planned"
+    }
+  ],
+  "allowed_techniques": [
+    "source review",
+    "local static analysis",
+    "local functional and security tests",
+    "bounded local port inspection",
+    "bounded local load tests",
+    "synthetic attack and abuse simulation"
+  ],
+  "prohibited_techniques": [
+    "public target scanning",
+    "testing upstream or third-party deployments",
+    "social engineering of real people",
+    "persistence or backdoors",
+    "destructive or unbounded tests",
+    "public disclosure before coordinated reporting"
+  ],
+  "data_rules": {
+    "synthetic_only": true,
+    "real_customer_data_allowed": false,
+    "production_backups_allowed": false,
+    "real_credentials_allowed": false,
+    "real_accounts_allowed": false
+  },
+  "identity_rules": {
+    "synthetic_users_only": true,
+    "example_user": "alice@tenant-alpha.test",
+    "synthetic_tenants_only": true
+  },
+  "external_network": {
+    "mode": "deny-by-default",
+    "allowed_hosts": [
+      "localhost",
+      "127.0.0.1",
+      "::1"
+    ],
+    "external_api_calls_allowed": false,
+    "external_connectors_allowed": false,
+    "external_forwarding_proxy_allowed": false
+  },
+  "cost_rules": {
+    "billable_resources_allowed": false,
+    "paid_apis_allowed": false,
+    "paid_saas_allowed": false,
+    "credit_card_trials_allowed": false
+  },
+  "limits": {
+    "max_concurrent_requests": 10,
+    "max_test_duration_seconds": 60,
+    "max_file_size_mb": 1,
+    "max_tokens_per_request": 8192,
+    "max_memory_mb": 4096,
+    "max_storage_mb": 1024
+  },
+  "stop_conditions": [
+    "A request would reach a non-loopback host",
+    "Real customer data or a real credential appears",
+    "A paid or billable service might be used",
+    "A configured resource limit is reached",
+    "The next action is outside or uncertain under this scope",
+    "Unexpected service degradation or data loss occurs"
+  ],
+  "evidence_rules": {
+    "allowed": [
+      "commands and UTC timestamps",
+      "sanitized logs",
+      "synthetic identifiers",
+      "code diffs",
+      "test results"
+    ],
+    "prohibited": [
+      "secrets",
+      "real personal data",
+      "production tokens",
+      "unsanitized production logs"
+    ]
+  },
+  "rollback": [
+    "Stop the local test",
+    "Remove temporary local containers",
+    "Delete synthetic credentials and datasets",
+    "Restore the local database snapshot when applicable",
+    "Revert the test commit when applicable"
+  ],
+  "responsible_disclosure": {
+    "public_issue_for_vulnerabilities_allowed": false,
+    "upstream_private_reporting_url": "https://github.com/onyx-dot-app/onyx/security/advisories/new",
+    "sanitize_reproduction_evidence": true,
+    "follow_upstream_security_policy": true
+  }
+}
