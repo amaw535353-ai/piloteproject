@@ -4421,7 +4421,7 @@ backend = [
     { name = "psutil", specifier = "==7.1.3" },
     { name = "psycopg2-binary", specifier = "==2.9.10" },
     { name = "puremagic", specifier = "==1.28" },
-    { name = "pyairtable", specifier = "==3.0.1" },
+    { name = "pyairtable", specifier = "==3.4.2" },
     { name = "pycryptodome", specifier = "==3.19.1" },
     { name = "pygithub", specifier = "==2.5.0" },
     { name = "pypdf", specifier = "==6.16.1" },
@@ -5294,7 +5294,7 @@ memory = [
 
 [[package]]
 name = "pyairtable"
-version = "3.0.1"
+version = "3.4.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "inflection" },
@@ -5303,9 +5303,9 @@ dependencies = [
     { name = "typing-extensions" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/8d/3e/fd1ba19e1d701aa3d4c99427a145e59c27c5c062ac4a0118a3af1807c023/pyairtable-3.0.1.tar.gz", hash = "sha256:7012a2403ba333db9d76d93453ade8762b3d12818d11cde670fa6cb697f42daf", size = 145058, upload-time = "2024-12-06T19:33:48.811Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c7/6c/efa2c21036ca2156dad1e0005aec9f50cd2fd2d3d8698c1c008fdcfb5e4e/pyairtable-3.4.2.tar.gz", hash = "sha256:6a9174d43800966660547e07d00736b3a0fdef75b5087b76ee8ba0e809c042ee", size = 154121, upload-time = "2026-07-26T01:43:51.876Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/75/ea/32f0baaa645e13efde942a7f245e1a915abf5c972874d902be6e61f69580/pyairtable-3.0.1-py2.py3-none-any.whl", hash = "sha256:07295d82be1adfd3c00e21c640e7c79d0819846daf0549bc982736cc07e85d8e", size = 99967, upload-time = "2024-12-06T19:33:46.677Z" },
+    { url = "https://files.pythonhosted.org/packages/94/7a/5119063ba9bc557b55991746b4f44618857eeb444dfc44d4014472947666/pyairtable-3.4.2-py2.py3-none-any.whl", hash = "sha256:398231594ec0b1c317d2362f403e5741cf4fa948eb546ddfc8a7cc23c9680223", size = 103973, upload-time = "2026-07-26T01:43:50.405Z" },
 ]
 
 [[package]]
