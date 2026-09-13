@@ -43,9 +43,7 @@ REQUIRED_POSITIVE_LIMITS = {
 }
 
 
-def _require_false(
-    section: dict[str, Any], field: str, errors: list[str]
-) -> None:
+def _require_false(section: dict[str, Any], field: str, errors: list[str]) -> None:
     if section.get(field) is not False:
         errors.append(f"{field} must be false")
 
@@ -112,14 +110,16 @@ def validate_scope(record: dict[str, Any]) -> list[str]:
         if not isinstance(value, int) or isinstance(value, bool) or value <= 0:
             errors.append(f"limits.{field} must be a positive integer")
 
-    for field in (
-        "allowed_techniques",
-        "prohibited_techniques",
-        "stop_conditions",
-        "rollback",
-    ):
-        if not record[field]:
-            errors.append(f"{field} must not be empty")
+    errors.extend(
+        f"{field} must not be empty"
+        for field in (
+            "allowed_techniques",
+            "prohibited_techniques",
+            "stop_conditions",
+            "rollback",
+        )
+        if not record[field]
+    )
 
     disclosure = record["responsible_disclosure"]
     _require_false(disclosure, "public_issue_for_vulnerabilities_allowed", errors)
